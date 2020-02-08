@@ -19,7 +19,7 @@
 #include <list>
 
 #define SPRITE_INDEX_NULL 0xFFFF
-#define MAX_SPRITES 10000
+#define MAX_SPRITES 65535
 
 enum class SpriteIdentifier : uint8_t
 {
