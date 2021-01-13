@@ -18,9 +18,9 @@ namespace GameActions
 }
 
 using GameActionResultPtr = std::unique_ptr<GameActions::Result>;
-GameActionResultPtr tile_inspector_insert_corrupt_at(const CoordsXY& loc, int16_t elementIndex, bool isExecuting);
 GameActionResultPtr tile_inspector_remove_element_at(const CoordsXY& loc, int16_t elementIndex, bool isExecuting);
 GameActionResultPtr tile_inspector_swap_elements_at(const CoordsXY& loc, int16_t first, int16_t second, bool isExecuting);
+GameActionResultPtr TileInspectorToggleInvisibilityOfElementAt(const CoordsXY& loc, int32_t elementIndex, bool isExecuting);
 GameActionResultPtr tile_inspector_rotate_element_at(const CoordsXY& loc, int32_t elementIndex, bool isExecuting);
 GameActionResultPtr tile_inspector_paste_element_at(const CoordsXY& loc, TileElement element, bool isExecuting);
 GameActionResultPtr tile_inspector_sort_elements_at(const CoordsXY& loc, bool isExecuting);
@@ -52,4 +52,3 @@ GameActionResultPtr tile_inspector_scenery_set_quarter_collision(
     const CoordsXY& loc, int32_t elementIndex, int32_t quarterIndex, bool isExecuting);
 GameActionResultPtr tile_inspector_banner_toggle_blocking_edge(
     const CoordsXY& loc, int32_t elementIndex, int32_t edgeIndex, bool isExecuting);
-GameActionResultPtr tile_inspector_corrupt_clamp(const CoordsXY& loc, int32_t elementIndex, bool isExecuting);

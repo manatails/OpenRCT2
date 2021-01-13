@@ -3011,8 +3011,7 @@ enum
     STR_LANGUAGE_LOAD_FAILED = 5561,
     STR_WARNING_IN_CAPS = 5562,
     STR_THIS_FEATURE_IS_CURRENTLY_UNSTABLE = 5563,
-    STR_INSERT_CORRUPT = 5564, // Unused
-    STR_INSERT_CORRUPT_TIP = 5565,
+
     STR_PASSWORD = 5566,
     STR_ADVERTISE = 5567,
     STR_PASSWORD_REQUIRED = 5568,
@@ -3917,6 +3916,10 @@ enum
     STR_THIS_WILL_TAKE_A_FEW_MINUTES = 6407,
     STR_INSTALL_INNOEXTRACT = 6408,
     STR_NOT_THE_GOG_INSTALLER = 6409,
+
+    STR_TILE_INSPECTOR_TOGGLE_INVISIBILITY_TIP = 6410,
+    STR_TILE_INSPECTOR_FLAG_INVISIBLE = 6411,
+    STR_TILE_INSPECTOR_INVISIBLE_SHORT = 6412,
 
     // Have to include resource strings (from scenarios and objects) for the time being now that language is partially working
     /* MAX_STR_COUNT = 32768 */ // MAX_STR_COUNT - upper limit for number of strings, not the current count strings

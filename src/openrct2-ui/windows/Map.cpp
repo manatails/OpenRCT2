@@ -1394,7 +1394,6 @@ static constexpr const uint16_t ElementTypeMaskColour[] = {
     0xFFFF, // TILE_ELEMENT_TYPE_WALL
     0x0000, // TILE_ELEMENT_TYPE_LARGE_SCENERY
     0xFFFF, // TILE_ELEMENT_TYPE_BANNER
-    0x0000, // TILE_ELEMENT_TYPE_CORRUPT
 };
 
 static constexpr const uint16_t ElementTypeAddColour[] = {
@@ -1406,7 +1405,6 @@ static constexpr const uint16_t ElementTypeAddColour[] = {
     MAP_COLOUR(PALETTE_INDEX_0),                      // TILE_ELEMENT_TYPE_WALL
     MAP_COLOUR(PALETTE_INDEX_99),                     // TILE_ELEMENT_TYPE_LARGE_SCENERY
     MAP_COLOUR(PALETTE_INDEX_0),                      // TILE_ELEMENT_TYPE_BANNER
-    MAP_COLOUR(PALETTE_INDEX_68),                     // TILE_ELEMENT_TYPE_CORRUPT
 };
 
 static uint16_t map_window_get_pixel_colour_peep(const CoordsXY& c)
@@ -1434,7 +1432,7 @@ static uint16_t map_window_get_pixel_colour_peep(const CoordsXY& c)
         int32_t tileElementType = tileElement->GetType() >> 2;
         if (tileElementType >= maxSupportedTileElementType)
         {
-            tileElementType = TILE_ELEMENT_TYPE_CORRUPT >> 2;
+            tileElementType = TILE_ELEMENT_TYPE_SURFACE >> 2;
         }
         colour &= ElementTypeMaskColour[tileElementType];
         colour |= ElementTypeAddColour[tileElementType];
