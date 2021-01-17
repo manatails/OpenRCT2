@@ -832,13 +832,13 @@ static void ShortcutScaleDown()
 }
 
 // Tile inspector shortcuts
-static void ShortcutInsertCorruptElement()
+static void ShortcutToggleInvisibility()
 {
     rct_window* w = window_find_by_class(WC_TILE_INSPECTOR);
-    if (w != nullptr && !WidgetIsDisabled(w, WC_TILE_INSPECTOR__WIDX_BUTTON_CORRUPT)
-        && w->widgets[WC_TILE_INSPECTOR__WIDX_BUTTON_CORRUPT].type != WindowWidgetType::Empty)
+    if (w != nullptr && !WidgetIsDisabled(w, WC_TILE_INSPECTOR__WIDX_BUTTON_TOGGLE_INVISIBILITY)
+        && w->widgets[WC_TILE_INSPECTOR__WIDX_BUTTON_TOGGLE_INVISIBILITY].type != WindowWidgetType::Empty)
     {
-        window_event_mouse_up_call(w, WC_TILE_INSPECTOR__WIDX_BUTTON_CORRUPT);
+        window_event_mouse_up_call(w, WC_TILE_INSPECTOR__WIDX_BUTTON_TOGGLE_INVISIBILITY);
         return;
     }
 }
@@ -1108,7 +1108,7 @@ namespace
         ShortcutOpenSceneryPicker,
         ShortcutScaleUp,
         ShortcutScaleDown,
-        ShortcutInsertCorruptElement,
+        ShortcutToggleInvisibility,
         ShortcutCopyElement,
         ShortcutPasteElement,
         ShortcutRemoveElement,

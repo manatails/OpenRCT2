@@ -173,7 +173,7 @@ static const ShortcutStringPair ShortcutList[] =
     { Input::Shortcut::Undefined,                           STR_NONE },
 
     { Input::Shortcut::TileInspector,                       STR_SHORTCUT_OPEN_TILE_INSPECTOR },
-    { Input::Shortcut::InsertCorruptElement,                STR_SHORTCUT_INSERT_CORRPUT_ELEMENT },
+    { Input::Shortcut::ToggleInvisibility,                  STR_SHORTCUT_TOGGLE_INVISIBILITY },
     { Input::Shortcut::CopyElement,                         STR_SHORTCUT_COPY_ELEMENT },
     { Input::Shortcut::PasteElement,                        STR_SHORTCUT_PASTE_ELEMENT },
     { Input::Shortcut::RemoveElement,                       STR_SHORTCUT_REMOVE_ELEMENT },

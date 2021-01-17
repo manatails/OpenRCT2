@@ -108,7 +108,7 @@ namespace OpenRCT2
             SceneryPicker,
             ScaleUp,
             ScaleDown,
-            InsertCorruptElement,
+            ToggleInvisibility,
             CopyElement,
             PasteElement,
             RemoveElement,

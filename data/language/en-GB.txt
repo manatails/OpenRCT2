@@ -3586,7 +3586,6 @@ STR_6331    :Create ducks
 STR_6332    :Remove ducks
 STR_6333    :Increase scale factor
 STR_6334    :Decrease scale factor
-STR_6335    :Tile Inspector: Insert corrupt element
 STR_6336    :Tile Inspector: Copy element
 STR_6337    :Tile Inspector: Paste element
 STR_6338    :Tile Inspector: Delete element
@@ -3664,6 +3663,7 @@ STR_6409    :The selected file is not the offline GOG Installer for RollerCoaste
 STR_6410    :Toggle invisibility
 STR_6411    :Invisible
 STR_6412    :I
+STR_6413    :Tile Inspector: Toggle invisibility
 
 #############
 # Scenarios #
