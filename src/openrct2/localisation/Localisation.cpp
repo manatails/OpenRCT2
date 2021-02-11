@@ -262,7 +262,7 @@ const rct_string_id PeepThoughts[] = {
     0,
     0,
     0,
-    0,
+    STR_PEEP_THOUGHT_TYPE_CAPTURED,
     STR_PEEP_THOUGHT_TYPE_HELP,
     STR_PEEP_THOUGHT_TYPE_RUNNING_OUT,
     STR_PEEP_THOUGHT_TYPE_NEW_RIDE,

@@ -1139,6 +1139,19 @@ void window_staff_stats_paint(rct_window* w, rct_drawpixelinfo* dpi)
             gfx_draw_string_left(dpi, STR_STAFF_STAT_RIDES_FIXED, ft.Data(), COLOUR_BLACK, screenCoords);
             break;
         case StaffType::Security:
+            ft = Formatter();
+            ft.Add<uint16_t>(peep->StaffCapturedPeeps);
+            gfx_draw_string_left(dpi, STR_STAFF_STAT_CAPTURED_PEEPS, ft.Data(), COLOUR_BLACK, screenCoords);
+            screenCoords.y += LIST_ROW_HEIGHT;
+
+            if (!(gParkFlags & PARK_FLAGS_NO_MONEY))
+            {
+                ft = Formatter();
+                ft.Add<money32>(peep->StaffFinesCollected);
+                gfx_draw_string_left(dpi, STR_STAFF_FINES_COLLECTED, ft.Data(), COLOUR_BLACK, screenCoords);
+                screenCoords.y += LIST_ROW_HEIGHT;
+            }
+
         case StaffType::Entertainer:
         case StaffType::Count:
             break;

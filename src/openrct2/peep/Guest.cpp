@@ -5945,7 +5945,53 @@ static void peep_update_walking_break_scenery(Peep* peep)
         int32_t y_diff = abs(inner_peep->y - peep->y);
 
         if (std::max(x_diff, y_diff) < 224)
+        {
+            //vandalism captured
+            inner_peep->StaffCapturedPeeps++;
+
+            //Reset anger levels
+            peep->PeepFlags &= ~PEEP_FLAGS_ANGRY;
+            peep->Angriness = 0;
+
+            //pay fine
+            money16 fine = MONEY(25, 00);
+            auto guest = peep->AsGuest();
+
+            if (!(gParkFlags & PARK_FLAGS_NO_MONEY))
+            {
+                if (peep->CashInPocket >= fine)
+                {
+                    // pay fine
+                    inner_peep->StaffFinesCollected += fine;
+                    guest->SpendMoney(peep->PaidToEnter, fine, ExpenditureType::ParkEntranceTickets);
+                }
+                else
+                {
+                    // not enough money? lose all balance and forced to exit park.
+                    inner_peep->StaffFinesCollected += peep->CashInPocket;
+                    guest->SpendMoney(peep->PaidToEnter, peep->CashInPocket, ExpenditureType::ParkEntranceTickets);
+
+                    peep->PeepFlags |= PEEP_FLAGS_LEAVING_PARK;
+                    peep->PeepFlags &= ~PEEP_FLAGS_PARK_ENTRANCE_CHOSEN;
+
+                    peep->Energy = 0;
+                }
+            }
+            else
+            {
+                peep->PeepFlags |= PEEP_FLAGS_LEAVING_PARK;
+                peep->PeepFlags &= ~PEEP_FLAGS_PARK_ENTRANCE_CHOSEN;
+
+                peep->Energy = 0;
+            }
+
+            peep->InsertNewThought(PeepThoughtType::Captured, PEEP_THOUGHT_ITEM_NONE);
+
+            //paid fine, so he is unhappy now
+            peep->Happiness = 0;
+
             return;
+        }
     }
 
     tileElement->SetIsBroken(true);

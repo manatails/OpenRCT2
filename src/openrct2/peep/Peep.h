@@ -208,6 +208,7 @@ enum class PeepThoughtType : uint8_t
 
     RoastSausageMuch = 156,
 
+    Captured = 167,           // "I got captured by security..."
     Help = 168,               // "Help! Put me down!"
     RunningOut = 169,         // "I'm running out of cash!"
     NewRide = 170,            // "Wow! A new ride being built!"
@@ -700,16 +701,24 @@ struct Peep : SpriteBase
     {
         money16 PaidOnFood;
         uint16_t StaffLitterSwept;
+        uint16_t StaffCapturedPeeps;
     };
     union
     {
         money16 PaidOnSouvenirs;
         uint16_t StaffBinsEmptied;
     };
-    uint8_t AmountOfFood;
-    uint8_t AmountOfDrinks;
-    uint8_t AmountOfSouvenirs;
-    uint8_t VandalismSeen; // 0xC0 vandalism thought timeout, 0x3F vandalism tiles seen
+    union
+    {
+        money32 StaffFinesCollected;
+        struct
+        {
+            uint8_t AmountOfFood;
+            uint8_t AmountOfDrinks;
+            uint8_t AmountOfSouvenirs;
+            uint8_t VandalismSeen; // 0xC0 vandalism thought timeout, 0x3F vandalism tiles seen
+        };
+    };
     uint8_t VoucherType;
     union
     {

@@ -3921,6 +3921,10 @@ enum
     STR_ZOOM_BUTTON_ON_TOOLBAR = 6410,
     STR_ZOOM_BUTTON_ON_TOOLBAR_TIP = 6411,
 
+    STR_STAFF_STAT_CAPTURED_PEEPS = 6412,
+    STR_PEEP_THOUGHT_TYPE_CAPTURED = 6413,
+    STR_STAFF_FINES_COLLECTED = 6414,
+
     // Have to include resource strings (from scenarios and objects) for the time being now that language is partially working
     /* MAX_STR_COUNT = 32768 */ // MAX_STR_COUNT - upper limit for number of strings, not the current count strings
 };

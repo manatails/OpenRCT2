@@ -358,6 +358,8 @@ void Staff::ResetStats()
         peep->StaffRidesInspected = 0;
         peep->StaffLitterSwept = 0;
         peep->StaffBinsEmptied = 0;
+        peep->StaffCapturedPeeps = 0;
+        peep->StaffFinesCollected = MONEY(00, 00);
     }
 }
 
