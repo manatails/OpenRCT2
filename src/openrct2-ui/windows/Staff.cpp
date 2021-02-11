@@ -1151,7 +1151,7 @@ void window_staff_stats_paint(rct_window* w, rct_drawpixelinfo* dpi)
                 gfx_draw_string_left(dpi, STR_STAFF_FINES_COLLECTED, ft.Data(), COLOUR_BLACK, screenCoords);
                 screenCoords.y += LIST_ROW_HEIGHT;
             }
-
+            break;
         case StaffType::Entertainer:
         case StaffType::Count:
             break;
